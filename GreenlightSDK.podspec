@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name                   = "GreenlightSDK"
-    spec.version                = "d770cfa"
+    spec.version                = "e60065b"
     spec.license                = { :type => "MIT OR BSD-2-Clause" }
     spec.summary                = "Swift bindings to Greenlight"
     spec.homepage               = "https://blockstream.com"
