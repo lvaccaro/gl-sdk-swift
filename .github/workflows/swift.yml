@@ -25,7 +25,7 @@ jobs:
           echo "New tag: ${VERSION}"
           
       - name: Setup rust toolchain
-        uses: dtolnay/rust-toolchain@1.85.0
+        uses: dtolnay/rust-toolchain@stable
         with:
           targets: x86_64-apple-ios,aarch64-apple-ios,aarch64-apple-ios-sim
 
