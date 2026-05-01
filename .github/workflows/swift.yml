@@ -40,9 +40,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install XcodeGen
-        uses: nightstory/setup-xcodegen@v1
-        with:
-          version: 'latest'
+        run: brew install xcodegen
 
       - name: Checkout greenlight repo
         # The public greenlight contains the gl-sdk, as well as this
