@@ -65,8 +65,8 @@ jobs:
       - name: Add MARKETING_VERSION to project.yml
         run: |
           brew install yq
-          yq e ".targets.glsdkFFI.settings.MARKETING_VERSION = \"\"${VERSION}\"\"" -i build/project.yml
-          yq e ".targets.glsdkFFI.settings.CURRENT_PROJECT_VERSION = \"1\"" -i build/project.yml
+          yq e '.targets.glsdkFFI.settings.MARKETING_VERSION = env(VERSION)' -i build/project.yml
+          yq e '.targets.glsdkFFI.settings.CURRENT_PROJECT_VERSION = "1"' -i build/project.yml
 
       - name: Build Swift bindings
         run: |
@@ -80,8 +80,6 @@ jobs:
         run: |
           zip -9 -r glsdkFFI.xcframework.zip glsdkFFI.xcframework
           echo "XCF_CHECKSUM=`swift package compute-checksum glsdkFFI.xcframework.zip`" >> $GITHUB_ENV
-      - name: Checksum
-        run: |
           echo "XCF_CHECKSUM: ${XCF_CHECKSUM}"
           
       - name: Create package files from templates
