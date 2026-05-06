@@ -58,7 +58,7 @@ jobs:
           git remote add origin https://github.com/lvaccaro/gl-sdk-swift
           git fetch
           git checkout main
-          git pull
+          git rebase origin/main
           
       - uses: Swatinem/rust-cache@v2
 
