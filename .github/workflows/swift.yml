@@ -54,6 +54,10 @@ jobs:
       - name: Update the gl-sdk-swift repo
         working-directory: libs/gl-sdk-swift
         run: |
+          git remote remove origin
+          git remote add origin https://github.com/lvaccaro/gl-sdk-swift
+          git fetch
+          git pull
           git checkout main
           
       - uses: Swatinem/rust-cache@v2
