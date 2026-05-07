@@ -57,8 +57,7 @@ jobs:
           git remote remove origin
           git remote add origin https://github.com/lvaccaro/gl-sdk-swift
           git fetch
-          git checkout main
-          git rebase origin/main
+          git checkout lvaccaro-0.2.1
           
       - uses: Swatinem/rust-cache@v2
 
