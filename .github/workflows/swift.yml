@@ -107,8 +107,8 @@ jobs:
           git add Package.swift Sources glsdkFFI.podspec GreenlightSDK.podspec
           git commit -m "Bump Greenlight SDK to version ${VERSION}"
           git tag ${VERSION} -m "${VERSION}"
-          git push
-          git push --tags
+          git push --set-upstream origin main
+          git push --set-upstream origin main --tags
           
       - name: Release and attach XCFramework binary artifact
         uses: ncipollo/release-action@v1
